@@ -1,10 +1,11 @@
-CREATE DATABASE nodelogin;
+CREATE DATABASE resarchbot;
 
 CREATE TABLE users(
-    id BIGSERIAL PRIMARY KEY NOT NULL,
-    name VARCHAR(200) NOT NULL,
-    email VARCHAR(200) NOT NULL,
-    password VARCHAR(200) NOT NULL,
+    user_id uuid PRIMARY KEY DEFAULT
+    uuid_generate_v4(),
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    first_name VARCHAR(255) NOT NULl,
+    last_name VARCHAR(255) NOT NULL,
     UNIQUE(email)
-
 );
